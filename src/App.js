@@ -61,11 +61,12 @@ const App = () => {
               id="break-decrement"
               onClick={() => {
                 if (!isRunning) {
-                  setBreakLength((prev) => {
-                    const newSessionLength = Math.max(1, prev - 1);
-                    if (!isRunning) setTimeLeft(newSessionLength * 60);
-                    return newSessionLength;
-                  });
+                  // setBreakLength((prev) => {
+                  //   const newSessionLength = Math.max(1, prev - 1);
+                  //   setTimeLeft(newSessionLength * 60);
+                  //   return newSessionLength;
+                  // });
+                  setBreakLength((prev) => Math.max(1, prev - 1));
                 }
               }}
             >
@@ -85,11 +86,12 @@ const App = () => {
               id="break-increment"
               onClick={() => {
                 if (!isRunning) {
-                  setBreakLength((prev) => {
-                    const newSessionLength = Math.min(60, prev + 1);
-                    if (!isRunning) setTimeLeft(newSessionLength * 60);
-                    return newSessionLength;
-                  });
+                  // setBreakLength((prev) => {
+                  //   const newSessionLength = Math.min(60, prev + 1);
+                  //   setTimeLeft(newSessionLength * 60);
+                  //   return newSessionLength;
+                  // });
+                  setBreakLength((prev) => Math.min(60, prev + 1));
                 }
               }}
             >
@@ -118,7 +120,7 @@ const App = () => {
                 if (!isRunning) {
                   setSessionLength((prev) => {
                     const newSessionLength = Math.max(1, prev - 1);
-                    if (!isRunning) setTimeLeft(newSessionLength * 60);
+                    setTimeLeft(newSessionLength * 60);
                     return newSessionLength;
                   });
                 }
@@ -142,7 +144,7 @@ const App = () => {
                 if (!isRunning) {
                   setSessionLength((prev) => {
                     const newSessionLength = Math.min(60, prev + 1);
-                    if (!isRunning) setTimeLeft(newSessionLength * 60);
+                    setTimeLeft(newSessionLength * 60);
                     return newSessionLength;
                   });
                 }
