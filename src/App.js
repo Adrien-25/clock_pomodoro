@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css"; // Add your styles here
+import "./App.css";
 import beepSound from "./assets/beep.mp3";
 
 const App = () => {
@@ -59,7 +59,15 @@ const App = () => {
           <div className="container-setting">
             <button
               id="break-decrement"
-              onClick={() => setBreakLength((prev) => Math.max(1, prev - 1))}
+              onClick={() => {
+                if (!isRunning) {
+                  setBreakLength((prev) => {
+                    const newSessionLength = Math.max(1, prev - 1);
+                    if (!isRunning) setTimeLeft(newSessionLength * 60);
+                    return newSessionLength;
+                  });
+                }
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +83,15 @@ const App = () => {
             <div id="break-length">{breakLength}</div>
             <button
               id="break-increment"
-              onClick={() => setBreakLength((prev) => Math.min(60, prev + 1))}
+              onClick={() => {
+                if (!isRunning) {
+                  setBreakLength((prev) => {
+                    const newSessionLength = Math.min(60, prev + 1);
+                    if (!isRunning) setTimeLeft(newSessionLength * 60);
+                    return newSessionLength;
+                  });
+                }
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +114,15 @@ const App = () => {
           <div className="container-setting">
             <button
               id="session-decrement"
-              onClick={() => setSessionLength((prev) => Math.max(1, prev - 1))}
+              onClick={() => {
+                if (!isRunning) {
+                  setSessionLength((prev) => {
+                    const newSessionLength = Math.max(1, prev - 1);
+                    if (!isRunning) setTimeLeft(newSessionLength * 60);
+                    return newSessionLength;
+                  });
+                }
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +138,15 @@ const App = () => {
             <div id="session-length">{sessionLength}</div>
             <button
               id="session-increment"
-              onClick={() => setSessionLength((prev) => Math.min(60, prev + 1))}
+              onClick={() => {
+                if (!isRunning) {
+                  setSessionLength((prev) => {
+                    const newSessionLength = Math.min(60, prev + 1);
+                    if (!isRunning) setTimeLeft(newSessionLength * 60);
+                    return newSessionLength;
+                  });
+                }
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
