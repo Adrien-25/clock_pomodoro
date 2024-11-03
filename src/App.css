@@ -1,18 +1,131 @@
-.container {
-  text-align: center;
-  margin-top: 50px;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-button {
-  margin: 5px;
-  padding: 10px;
-  font-size: 16px;
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
+  margin-bottom: 40px;
   font-size: 2em;
+  text-transform: uppercase;
+
 }
 
-div {
-  margin-bottom: 20px;
+.timer-controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  gap: 50px;
+  font-size: 1.5em;
+}
+.container-setting{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+#break-decrement,
+#break-increment,
+#session-decrement,
+#session-increment {
+  background-color: #d2b48c; /* Beige color */
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5em;
+  margin: 0 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* #break-label,  */
+.timer-controls svg {
+  width: 15px;
+  height: 15px;
+}
+
+.circle {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 20px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#break-circle {
+  border: 2px solid #ff6347; /* Tomato color */
+}
+
+#session-circle {
+  border: 2px solid #32cd32; /* Lime green color */
+}
+
+button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.control-buttons {
+  margin-top: 20px;
+}
+
+.round-button {
+  background-color: #d2b48c; /* Beige color */
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em;
+  margin: 0 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.round-button i {
+  pointer-events: none;
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#timer-label {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+#time-left {
+  font-size: 2em;
 }
